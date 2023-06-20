@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Ring : MonoBehaviour
 {
-    private Transform player;
+    
     public GameObject[] childRings;
+    private Transform player;
     private GameManager GameManager;
     private Ball ballScript;
     
 
     float radius = 100f;
     float force = 500f;
+    
+    
     private void Start()
     {
         ballScript = GameObject.Find("Ball").GetComponent<Ball>();
@@ -24,8 +27,7 @@ public class Ring : MonoBehaviour
     {
         if (transform.position.y > player.position.y + 0.1f)
         {
-            PassRings();
-            
+            PassRings();   
         }
     }
 

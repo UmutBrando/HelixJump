@@ -5,24 +5,29 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public GameObject splitPrefab;
+    
+    
     public int combo;
-    public bool ComboBuff;
-    public Transform fireEffect2;
-    public bool fireEffectBool;
+
     public float maxspeed;
-    public ParticleSystem firework;
-    public GameObject fireEffect3;
+    public float bounceForce = 400f;
+    
+    
+    public bool ComboBuff;
+    public bool fireEffectBool;
     public bool allowDestroyingAssets;
+ 
+    
+    public ParticleSystem firework;
     public ParticleSystem fireEffect;
 
     Rigidbody rb;
-    public float bounceForce = 400f;
+    
    
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-       
     }
 
 
@@ -37,9 +42,9 @@ public class Ball : MonoBehaviour
         {
             fireEffect.Play();
             fireEffectBool = true;
-        }
-        
+        }  
     }
+    
     private void OnCollisionEnter(Collision other)
     {
         if (ComboBuff == true && GameManager.levelWin == false)

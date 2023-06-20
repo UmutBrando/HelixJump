@@ -28,6 +28,7 @@ public class HelixManager : MonoBehaviour
         }
         SpawnRings(rings.Length - 1);
     }
+    
     void SpawnRings(int index)
     {
         GameObject newRing = Instantiate(rings[index], new Vector3(transform.position.x, yPos, transform.position.z), Quaternion.identity);
